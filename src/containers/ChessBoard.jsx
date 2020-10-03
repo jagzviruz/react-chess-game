@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
+import { TouchBackend } from 'react-dnd-touch-backend'
 
 import initialPositions from '../utils/initialPositions';
 
@@ -77,7 +77,7 @@ class ChessBoard extends Component {
           ))}
         </div>
         <div className="grid">
-          <DndProvider backend={HTML5Backend}>{this.getGrid(8, 8)}</DndProvider>
+          <DndProvider backend={TouchBackend}>{this.getGrid(8, 8)}</DndProvider>
         </div>
         <div className="right-edge">
           {verticalLabel.map((label, index) => (
