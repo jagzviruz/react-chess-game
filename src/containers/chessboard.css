@@ -1,0 +1,105 @@
+.chessboard {
+  background-color:#37474F;
+  height: 80vh;
+  width: 80vh;
+  margin: 10vh auto;
+  border: 1px solid #333;
+  position: relative;
+}
+
+.top-edge,
+.bottom-edge {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  height: 30px;
+  background-color:#37474F;
+  left: 30px;
+  right: 30px;
+  color: #ECEFF1
+}
+
+.top-edge {
+  top: 0;
+}
+
+.bottom-edge {
+  bottom: 0;
+}
+
+.left-edge,
+.right-edge {
+  font-weight: 700;
+  position: absolute;
+  width: 30px;
+  top: 30px;
+  bottom: 30px;
+  background-color:#37474F;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #ECEFF1
+}
+
+.left-edge {
+  left: 0;
+}
+
+.right-edge {
+  right: 0;
+}
+
+.top-label-cell,
+.bottom-label-cell {
+  flex-basis: calc(100% / 8);
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+}
+
+.grid {
+  width: calc(100% - 30px - 30px);
+  height: calc(100% - 30px - 30px);
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  height: 89px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: calc(100% / 8);
+  flex-grow: 0;
+  background-color: #607D8B;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.cell.hovered:before{
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  opacity: 0.8;
+}
+
+.row:nth-child(2n + 1) .cell:nth-child(2n + 1),
+.row:nth-child(2n) .cell:nth-child(2n) {
+  background-color: #ECEFF1;
+}
+
+.piece.draggable{
+  cursor: grab;
+}
